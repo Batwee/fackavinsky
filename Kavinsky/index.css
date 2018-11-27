@@ -1,0 +1,170 @@
+
+
+@font-face {
+font-family: 'hitch-hike';
+src: url('hitch.otf');
+font-weight: normal;
+font-style: normal;
+}
+
+
+#principal {
+  margin-left: auto;
+  margin-right: auto;
+  width: 600px;
+}
+
+a {
+color : transparent;
+}
+
+#onglets
+
+{
+    position : absolute;
+    border : 6px solid transparent;
+    padding : 0;
+    font : bold 50px hitch-hike;
+
+    list-style-type : none;
+
+    left : 55%;
+
+    margin-top : 0;
+
+    width : 500px;
+    
+    margin-left : -597px;
+
+}
+
+#onglets li
+
+{
+
+    float : left;
+
+    height : 50px;
+
+    background-color: black;
+
+    margin : 5px 5px 0 5px ;  
+
+    border : 5px solid black;
+	
+
+}
+#onglets li.active
+
+{
+
+   
+
+    background-color: black;
+
+}
+
+#onglets a
+
+{
+
+    display : block;
+
+    color : #2181EF;
+
+    text-decoration : none;
+
+    
+
+}
+
+#onglets a:hover
+
+{
+  color : #C51700;
+    
+	
+
+}
+
+
+
+
+
+
+body {
+
+	background-color: black;
+}
+
+
+
+.container{
+    margin-top : 0;
+
+   
+    margin-left : -50px;
+	
+}
+
+.rightColumn {
+    width: 300px;
+    float: right;
+}
+
+
+
+.leftMiddleColumns {
+    background-color : #C7D7EE;
+	width: 900px;
+    float: left;
+	margin-left:-240px;
+	height : 980px;
+	
+
+}
+
+.texte {
+	margin-left:25px;
+	width : 850px;
+	float: middle;
+	
+}
+
+@font-face {
+font-family: 'hitch-hike';
+src: url('hitch.otf');
+font-weight: normal;
+font-style: normal;
+}
+
+
+
+p{
+font-family:hitch-hike;
+color : #C51700 ;
+
+font-size:1.95em;
+}
+
+
+#menu {
+
+padding-bottom : 25px;
+}
+
+
+footer {
+    padding: 40px 0 10px 0;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+
+
+body {
+  background: #C7D7EE; 
+  font: 14px sans-serif;              
+  margin: 1em;  
+  
+}
+
+
+
+table {
+border-collapse: collapse;
+}
+
+td {
+border: 1px solid blue;
+}
+
+
+
+
+h1 { 
+
+  font-family: serif;         
+  background: #0066CC none;   
+  color: white;               
+  border: 3px dotted #9999FF;                     
+  letter-spacing: 0.3em;   
+  
+  
+}
+
+h2 { 
+  color: #2222CC;            
+  font-style: italic;         
+  text-indent: 1em;          
+}
+
+h1 { text-align: center }
+p { text-align: center }
+h2{ text-align: center }
+table { text-align: center }
+table { margin:auto}
+

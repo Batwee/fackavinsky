@@ -1,0 +1,95 @@
+
+body {
+border : 1px solid;
+
+}
+table {
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid black;
+}
+p1 {
+	text-align: center;
+}
+
+
+#onglets
+
+{
+    position : absolute;
+    border : 1px solid transparent;
+    padding : 0;
+    font : bold 11px black, arial, black;
+
+    list-style-type : none;
+
+    left : 55%;
+
+    margin-top : 0;
+
+    width : 430px;
+    
+    margin-left : -215px;
+
+}
+
+#onglets li
+
+{
+
+    float : left;
+
+    height : 21px;
+
+    background-color: #F4F9FD;
+
+    margin : 2px 2px 0 2px !important;  
+
+    border : 1px solid #9EA0A1;
+
+}
+#onglets li.active
+
+{
+
+    border-bottom: 1px solid #fff;
+
+    background-color: #fff;
+
+}
+
+#onglets a
+
+{
+
+    display : block;
+
+    color : #666;
+
+    text-decoration : none;
+
+    padding : 4px;
+
+}
+
+#onglets a:hover
+
+{
+
+    background : #fff;
+
+}
+
+#menu
+
+{
+
+        border-bottom : 1px solid #9EA0A1;
+
+        padding-bottom : 25px;
+
+}
+
+
+
