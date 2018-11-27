@@ -1,0 +1,496 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 8 oct. 2018, 10:37:36
+    Author : greta
+*/
+
+
+
+
+body{
+    width:100%;
+    background: #696969;
+    
+}
+
+
+
+.col1{
+    
+    width:33.333333%;
+
+}
+.col2{
+    
+    width:308px;
+
+}
+.col3{
+    
+    width:20px;
+
+}
+.col1,.col2,.col3{
+    position: relative;
+    height:900px;
+    display: inline-block;
+    float: left;
+   
+}
+
+.playlist{
+    font-family: 'Lucida Console', Monaco, monospace;
+    font-size:11px;
+    color :#757D75;
+    position:relative;
+    float:right;
+    border: 3px solid #ddddda;
+    display:block; 
+    width: 180px; 
+    height:400px;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    margin-top:80px; 
+    background-color: #ddddda; 
+   
+}
+
+
+.lecteur{
+    font-family: 'Lucida Console', Monaco, monospace;
+    font-size:11px;
+    color :#757D75;
+    position:relative;
+    border: 3px solid #ddddda;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    display:block; 
+    width: 300px; 
+    height:400px;
+    margin:auto;
+    margin-top:80px; 
+    background-color: #ddddda; 
+   
+}
+.top-playlist{
+    font-size: 20px;
+    border-top-left-radius: 10px;
+    width:100%;
+    height:30px;
+    background-color:#757D75;
+    color:#ddddda; 
+    padding-top:4px;
+    text-align:center;  
+
+}
+.middle-playlist{
+    margin-top:3px;
+    font-size: 10px;
+    width:174px;
+    height:300px;
+    border: 3px solid #757D75;
+    color:#ddddda; 
+    padding-top:4px;
+    text-align:center;  
+
+}
+
+
+.pochette{
+    background-image: url("img/album/josman.png");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    border-top-right-radius: 10px;
+    right:0px; 
+    width:300px;
+    height:300px;
+    
+       
+}
+
+.slider{
+    position: absolute;
+    top:310px;
+    right:-4px; 
+    width:300px;
+    height:30px
+}
+
+
+
+.commande{
+    position: absolute;
+    top:342px;
+    width:100%;
+    height:50px;   
+}
+
+
+.bouton{
+    padding:10px;
+    float: left;
+    height: 30px; 
+    width: 30px;
+    margin-right:14px;
+    margin-left:14px;
+    min-width: 10px;
+       
+    
+}
+
+.boutonv{
+    margin-top: 20px;
+    margin-left:5px;
+    padding:10px;
+    float: left;
+    height: 10px; 
+    width: 10px;
+    min-width: 10px;
+       
+    
+}
+.boutonr{
+    margin-top: -30px;
+    margin-left:4px;
+    padding:10px;
+    float: right;
+    height: 8px; 
+    width: 8px;
+    min-width: 10px;
+       
+    
+}
+
+
+#previous{
+    background-image: url("img/ico/previous.png"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    
+    
+}
+#play{
+    background-image: url("img/ico/play.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 63px;
+    
+    
+    
+}
+
+#mute{
+    background-image: url("img/ico/unmuted.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px; 
+}
+
+#lien{
+    background-image: url("img/ico/fenico.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px; 
+}
+#lien:hover {
+    opacity: 0.7; 
+}
+
+#unmute{
+    background-image: url("img/ico/muted.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px; 
+}
+
+#mute:hover {
+    opacity: 0.7; 
+}
+
+#pause{
+    background-image: url("img/ico/pause.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 63px;
+    
+    
+    
+}
+#next{
+    background-image: url("img/ico/next.png"); 
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    
+    
+}
+
+.bouton:hover{
+    
+    transform:scale(1.1);
+    
+   
+}
+
+
+
+#volume{
+    
+    left:-190px;
+    
+    top:271px;
+    width: 406px;
+    transform: rotate(-90deg);
+    
+    
+}
+
+#volume::-webkit-slider-runnable-track {
+    height: 12px;
+    background: #ddddda;
+    border-radius: 6px;
+    
+
+}
+
+
+#volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 11px;
+    border-radius: 0;
+    background: #757D75;
+    box-shadow: -100vw 0 0 100vw rgb(240, 125, 18);
+    margin-top: 0px;
+    
+}
+
+#volume::-moz-range-track {
+    height:12px;
+    background: #ddddda;
+    
+    
+}
+
+#volume::-moz-range-thumb {
+    -moz-appearance: none;
+    background: #757D75;
+    height: 12px;
+    width: 12px;
+   
+    border: none; 
+    box-shadow: -100vw 0 0 100vw rgb(240, 125, 18);
+    box-sizing: border-box;
+}
+
+#volume::-ms-fill-lower { 
+    background: rgb(240, 125, 18);
+}
+#volume::-ms-thumb { 
+    background: #757D75;
+    height: 12px;
+    width: 12px;
+    border: none; 
+    box-sizing: border-box;
+}
+
+#volume::-ms-ticks-after { 
+    display: none; 
+}
+
+#volume::-ms-ticks-before { 
+    display: none; 
+}
+
+#volume::-ms-track { 
+    color: transparent;
+    border: none;
+    height:12px;
+    background: #ddddda;
+    border-radius: 5px;
+}
+
+#volume::-ms-tooltip { 
+    display: none;
+}
+
+
+
+
+
+
+input[type=range]{ 
+    -webkit-appearance: none; /* desactive le bouton range de chrome */
+    outline:none; /*   enlever le cadre bleu */
+    margin-top:8px;
+    position: relative;
+    overflow: hidden;
+    height: 10px;
+    width: 220px;
+    cursor: pointer;
+    border-radius: 12px;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+
+#progress:hover {
+    opacity: 0.7;
+     
+}
+
+::-webkit-slider-runnable-track {
+    height: 12px;
+    background: rgb(160, 167, 175);
+    border-radius: 5px;
+
+}
+
+
+::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 11px;
+    border-radius: 0;
+    background: #757D75;
+    box-shadow: -100vw 0 0 100vw #2c3e50;
+    margin-top: 0px;
+}
+
+::-moz-range-track {
+    height:12px;
+    background: rgb(160, 167, 175);
+    border-radius: 5px;
+    
+}
+
+::-moz-range-thumb {
+    -moz-appearance: none;
+    background: #757D75;
+    height: 12px;
+    width: 12px;
+    border-radius: 0;
+    border: none; 
+    box-shadow: -100vw 0 0 100vw #2c3e50;
+    box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+    background: #2c3e50;
+}
+::-ms-thumb { 
+    background: #757D75;
+    height: 12px;
+    width: 12px;
+    border: none; 
+    box-sizing: border-box;
+}
+
+::-ms-ticks-after { 
+    display: none; 
+}
+
+::-ms-ticks-before { 
+    display: none; 
+}
+
+::-ms-track { 
+    color: transparent;
+    border: none;
+    height:12px;
+    background: rgb(160, 167, 175);
+    border-radius: 5px;
+}
+
+::-ms-tooltip { 
+    display: none;
+}
+
+
+
+
+
+
+.lecteur .commande>div{
+    margin:auto;
+    width: 300px;
+    height: 50px;
+    
+    
+}
+#cursor{
+    margin-top:5px;
+    width:90%;
+    
+    
+}
+
+@media screen and (max-width: 768px) {
+    .lecteur{ 
+    
+        
+    }
+
+    .pochette{
+             
+    }
+    .slider{
+         
+}
+    
+    
+    
+}
+
+@media screen and (max-width: 400px) {
+    .lecteur{ 
+        margin-top:-10px; 
+        right:10px;
+        border-bottom-left-radius:10px;
+        border-top-left-radius:10px;
+    }
+    button{
+        display: none;
+
+    }
+    .playlist{
+        display:none;
+    }
+
+    #lien{
+        display: none;
+    }
+    #volume{
+        display: none;
+    }
+    .pochette{   
+        border-top-left-radius: 10px;
+    }
+    .slider{   
+    }
+    
+
+    .lecteur .commande>div{
+    
+    
+    
+}
+
+    .lecteur .commande div div{
+        
+    
+    
+}
+    
+}    
+
+

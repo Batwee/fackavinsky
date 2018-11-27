@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+
+    <title>Lecteur</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onload="start()">
+    <main>
+        <script type="text/javascript">
+            function time() {
+                var player = document.getElementsByTagName("audio")[0];
+                var current = player.currentTime;
+                var duration = player.duration;
+                var arr = Math.floor(current);
+                var minutes = Math.floor(arr / 60);
+                var secondes = Math.floor(arr - minutes * 60);
+                if (secondes < 10) {
+                    secondes = "0" + secondes;
+                }
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+                }
+                if (minutes > 60) {
+                    minutes = "Er";
+                }
+                document.getElementById("Time").innerHTML = minutes + ":" + secondes;
+                var maxi = player.duration;
+                var percent = Math.floor(100 * (current / maxi));
+                document.getElementById("progress").value = percent;
+
+                if (player.currentTime == player.duration) {
+                    player.currentTime = 0;
+                    stoping()
+                }
+
+
+                var arr2 = Math.floor(duration);
+                var fminutes = Math.floor(arr2 / 60);
+                var fsecondes = Math.floor(arr2 - fminutes * 60);
+                if (fsecondes < 10) {
+                    fsecondes = "0" + fsecondes;
+                }
+                if (fminutes < 10) {
+                    fminutes = "0" + fminutes;
+                }
+                if (fminutes > 60) {
+                    fminutes = "Er";
+                }
+                document.getElementById("Lastime").innerHTML = fminutes + ":" + fsecondes;;
+
+            }
+            setInterval('time()', 0.4);
+
+            function changing() {
+                var player = document.getElementsByTagName("audio");
+                var sec = Math.floor(((document.getElementById("progress").value) / 100) * player.duration);
+                player.currentTime = sec;
+
+            }
+
+            function playing() {
+                var player = document.getElementsByTagName("audio")[0];
+                player.play();
+                document.getElementById("play").onclick = function () {
+                    stoping();
+                };
+                document.getElementById("play").id = "pause";
+
+                /* var p = document.getElementByClassName("pauseplay")[0];
+                 if (p.id == "play") {
+                 s.play();
+                 document.getElementById("play").id = "pause";
+                 } else if (p.id == "pause") {
+                 s.pause();
+                 document.getElementById("pause").id = "play";
+                 }*/
+            }
+
+            function stoping() {
+                var player = document.getElementsByTagName("audio")[0];
+                player.pause();
+                document.getElementById("pause").onclick = function () {
+                    playing();
+                };
+                document.getElementById("pause").id = "play";
+
+
+            }
+
+            var tab = ["https://s1.vocaroo.com/media/download_temp/Vocaroo_s1MHFEIWNBrf.mp3",
+                "https://soundbible.com/mp3/Tyrannosaurus%20Rex%20Roar-SoundBible.com-807702404.mp3",
+                "audio/Alien.mp3", "audio/labrador.mp3"
+            ];
+            var img = ["img/album/josman.png", "img/album/dinos.png", "img/album/julius.png", "img/album/polak.png", ];
+            var srcc = 0;
+
+
+            function start() {
+                var player = document.getElementsByTagName("audio")[0];
+                var srcc = 0;
+                player.src = tab[srcc + 2];
+
+
+            }
+
+            function previous() {
+                var player = document.getElementsByTagName("audio")[0];
+                if (srcc !== 0) {
+                    srcc = srcc - 1;
+                    player.src = tab[srcc];
+                }
+
+
+            }
+
+
+
+            function next() {
+
+                var player = document.getElementsByTagName("audio")[0];
+                if (srcc < length.tab) {
+                    srcc = srcc + 1;
+                }
+
+                if (srcc == length.tab) {
+                    srcc = 0;
+
+                }
+                player.src = tab[srcc];
+
+            }
+
+            function mute() {
+                var player = document.getElementsByTagName("audio")[0];
+                player.muted = true;
+                document.getElementById("mute").onclick = function () {
+                    unmute();
+                }
+                document.getElementById("mute").id = "unmute";
+            }
+
+            function unmute() {
+                var player = document.getElementsByTagName("audio")[0];
+                player.muted = false;
+                document.getElementById("unmute").onclick = function () {
+                    mute();
+                }
+                document.getElementById("unmute").id = "mute";
+            }
+
+            function volume() {
+                var player = document.getElementsByTagName("audio")[0];
+                var voli = document.getElementById("volume").value;
+                voli = voli / 100;
+                player.volume = voli;
+            }
+            setInterval('volume()', 0.1);
+
+            function lien() {
+                chr = "Chrome";
+                fir = "Firefox";
+                tab = navigator.userAgent;
+                if (tab.includes(chr)) {
+
+                    f = window.open("index.html", "Lecteur2",
+                        "height=480, width=299,toolbar=no,scrollbars=no,status=no");
+                } else if (tab.includes(fir)) {
+                    f = window.open("index.html", "Lecteur2",
+                        "height=400, width=300,toolbar=no,scrollbars=no,status=no");
+                } else {
+                    f = window.open("index.html", "Lecteur2",
+                        "height=400, width=300,toolbar=no,scrollbars=no,status=no");
+
+                }
+            }
+        </script>
+
+        <div class="col1">
+            <div class="playlist">
+                <div class="top-playlist">Playlist</div>
+                <div class="middle-playlist"></div>
+                <div class="bottom-playlist"></div>
+            </div>
+        </div>
+
+
+        <div class="col2">
+            <audio controls preload="auto" src="" hidden>
+                your browser does not support Html5
+            </audio>
+
+
+            <div class="lecteur">
+                <div class="pochette"></div>
+
+                <div class="slider">
+                    <span><small id="Time"></small></span>
+                    <input type="range" id="progress" min="0" max="100" value="0" onclick="changing()" />
+                    <span><small id="Lastime"></small></span>
+                </div>
+
+
+                <div class="commande">
+                    <div>
+                        <div class="boutonv" id="mute" onclick="mute()"></div>
+                        <div class="bouton" id="previous" onclick="previous()"></div>
+                        <div class="bouton" id="play" onclick="playing()"></div>
+                        <div class="bouton" id="next" onclick="next()"></div>
+                        <div class="boutonr" id="lien" onclick="lien()"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col3"><input type="range" id="volume" min="0" max="100" value="100" /></div>
+
+    </main>
+
+</body>
+
+</html>
